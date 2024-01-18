@@ -20,7 +20,7 @@ keywords = [
     "proto",
     "ros",
     "msg",
-    "translation"
+    "translation",
     "parser",
     "grammar",
 ]

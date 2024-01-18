@@ -45,7 +45,7 @@ Limitations:
 - constants are translated to comments
 - no support for string and array bounds (both treated as unbounded)
 
-We defined a [Parsing Expression Grammar]((https://en.wikipedia.org/wiki/Parsing_expression_grammar)) for ROS messages and use [Parsimonious](https://github.com/erikrose/parsimonious) for the actual parsing.
+We defined a [Parsing Expression Grammar](https://en.wikipedia.org/wiki/Parsing_expression_grammar) for ROS messages and use [Parsimonious](https://github.com/erikrose/parsimonious) for the actual parsing.
 
 ## Installation
 
@@ -56,13 +56,7 @@ sudo apt install protobuf-compiler
 
 Install our `proto_ros` package from PyPi:
 ```
-pip install proto_ros
+pip install proto-ros
 ```
-
-Or install it from GitHub:
-```
-pip install "git+https://github.com/dortmans/proto_ros.git"
-```
-
 
 

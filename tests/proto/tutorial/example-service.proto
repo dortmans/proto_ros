@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package tutorial;
+
+import "google/protobuf/empty.proto";
+
+service ExampleService {
+    rpc ExampleCall1(ExampleMessage1) returns(ReturnType) {}
+    rpc ExampleCall2(ExampleMessage2) returns(google.protobuf.Empty) {}
+}
+
+
+// ExampleMessage1 - Example Leading Comment for ExampleMessage1
+message ExampleMessage1 {
+    string MyString = 1;
+    enum MyEnumType {
+        A = 0;
+        B = 1;
+    }
+    MyEnumType MyEnumField = 2; 
+} 
+
+/*
+ExampleMessage2 - Example Leading Comment for ExampleMessage2
+*/
+message ExampleMessage2 {
+    int32 MyInt = 1;
+    // MyInt - Example trailing Comment
+    message ExampleNested {
+        bytes data = 1;
+    }
+    ExampleNested nested = 2;
+}
+
+/*
+ReturnType - Empty Structure Placeholder
+*/
+message ReturnType {}

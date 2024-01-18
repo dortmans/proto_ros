@@ -1,0 +1,48 @@
+/* Product Service Example */
+
+syntax = "proto3";
+
+package tutorial;
+
+service ProductService{
+    rpc AddProduct(AddProductRequest) returns (AddProductResponse) {}
+    rpc GetProductById(GetProductByIdRequest) returns (GetProductByIdResponse) {}
+    rpc GetAllProducts(GetAllProductsRequest) returns (GetAllProductsResponse) {}
+    rpc RemoveProduct(RemoveProductRequest) returns (RemoveProductResponse) {}
+}
+
+message AddProductRequest{
+    string name = 1;
+    int32 price = 2;
+    int32 stock = 3;
+}
+
+message AddProductResponse{
+    bool success = 1;
+}
+
+message GetProductByIdRequest{
+    int32 id = 1;
+}
+
+message GetProductByIdResponse{
+    int32 id = 1;
+    string name = 2;
+    int32 price = 3;
+    int32 stock = 4;
+}
+
+message GetAllProductsRequest{
+}
+
+message GetAllProductsResponse{
+    repeated GetProductByIdResponse products = 1;
+}
+
+message RemoveProductRequest{
+    int32 id = 1;
+}
+
+message RemoveProductResponse{
+    bool success = 1;
+}

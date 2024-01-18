@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package tutorial;
+
+import "google/protobuf/duration.proto";  
+import "google/protobuf/timestamp.proto";
+
+message Meeting {
+
+    string subject = 1;
+    google.protobuf.Timestamp time = 2;
+    google.protobuf.Duration duration = 3;
+
+}

@@ -1,0 +1,14 @@
+syntax="proto3";
+
+package geometry;
+
+import "geometry/point.proto";
+import "geometry/vector.proto";
+
+
+message PosVel {
+	//geometry.Point position = 1;
+	//geometry.Vector velocity = 2;
+	Point position = 1;
+	Vector velocity = 2;
+}

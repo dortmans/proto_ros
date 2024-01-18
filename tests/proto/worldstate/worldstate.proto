@@ -1,0 +1,43 @@
+syntax="proto3";
+
+import "google/protobuf/timestamp.proto";
+import "geometry/posvel.proto";
+
+package worldstate;
+
+message WorldState {
+	google.protobuf.Timestamp timestamp = 1;
+	uint32 game_state	= 2;
+	Ball ball = 3;
+	repeated Robot teammembers = 4;
+	repeated Obstacle obstacles = 5;
+}
+
+message Robot {
+	uint32 id = 1;
+	
+	enum Role {
+  	ROLE_UNSPECIFIED = 0;
+  	ROLE_GOALKEEPER = 1;
+  	ROLE_DEFENDER = 2;
+  	ROLE_STRIKER = 3;
+	}
+	Role role = 2;
+	
+	bool has_ball = 3;
+	geometry.PosVel posvel = 4;
+}
+
+message Ball {
+	float confidence = 1;
+	geometry.PosVel posvel = 2;
+}
+
+message Obstacle {
+	float confidence = 1;
+	geometry.PosVel posvel = 2;
+}
+
+
+
+
